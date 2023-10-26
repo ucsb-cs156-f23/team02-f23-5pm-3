@@ -1,8 +1,17 @@
-# STARTER-team02
+# team02-f23-5pm-3
 
 Instructions: <https://ucsb-cs156.github.io/f23/lab/team02.html>
 
-TODO: change heading above to your repo name, e.g. `# team02-f23-6pm-4`
+```
+| Table                       | Team Member  | Github Id       |
+|-----------------------------|--------------|-----------------|
+| `UCSBDiningCommonsMenuItem` | Karim        | KarimBenyassine1|
+| `UCSBOrganization`          | Kaitlyn      | kaitntom        |
+| `RecommendationRequest`     | Kelly        | kellyyan        |
+| `MenuItemReview`            | Madison      | madisonlong1    |
+| `HelpRequest`               | Olivia       | livjono         |
+| `Articles`                  | Wyatt        | wyatthspivak    |
+```
 
 TODO: Add a link to the deployed Dokku app for your team here, e.g.
 
