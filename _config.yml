@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f23/team02-f23-5pm-3
 owner: ucsb-cs156-f23
 repo_name: team02-f23-5pm-3
-pull_requests: [{"author":{"id":"U_kgDOBXgf8g","is_bot":false,"login":"wyatthspivak","name":""},"headRefName":"Wyatt-Articles-create-db","number":45,"title":"Created Articles table for database","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/45"},{"author":{"id":"MDQ6VXNlcjQ2NTM5Mzg4","is_bot":false,"login":"KarimBenyassine1","name":"Karim Benyassine"},"headRefName":"Karim-UCSBDiningCommonsMenuItem-create-db","number":44,"title":"added UCSBDiningCommonsMenuItem Database","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/44"}]
+pull_requests: [{"author":{"id":"U_kgDOBXgf8g","is_bot":false,"login":"wyatthspivak","name":""},"headRefName":"Wyatt-Articles-create-db","number":45,"title":"Created Articles table for database","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/45"}]
