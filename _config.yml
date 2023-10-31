@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f23/team02-f23-5pm-3
 owner: ucsb-cs156-f23
 repo_name: team02-f23-5pm-3
-pull_requests: [{"author":{"id":"U_kgDOBXgf8g","is_bot":false,"login":"wyatthspivak","name":""},"headRefName":"Wyatt-ArticlesController-GETEndpoint","number":53,"title":"Added GET endpoint for ArticlesController along with tests","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/53"},{"author":{"id":"U_kgDOBmv1pg","is_bot":false,"login":"livjono","name":"Olivia Jonokuchi"},"headRefName":"liv-README","number":52,"title":"Liv updated README with links to the prod and qa instances on dokku","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/52"}]
+pull_requests: [{"author":{"id":"U_kgDOBmv1pg","is_bot":false,"login":"livjono","name":"Olivia Jonokuchi"},"headRefName":"liv-README","number":52,"title":"Liv updated README with links to the prod and qa instances on dokku","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/52"}]
