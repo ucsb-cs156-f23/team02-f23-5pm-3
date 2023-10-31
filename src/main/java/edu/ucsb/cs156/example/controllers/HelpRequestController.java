@@ -42,12 +42,12 @@ public class HelpRequestController extends ApiController{
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/post")
     public HelpRequest postHelpRequest(
-            @Parameter(name="requesterEmail") @RequestParam String requesterEmail,
-            @Parameter(name="teamId") @RequestParam String teamId,
-            @Parameter(name="tableOrBreakoutRoom") @RequestParam String tableOrBreakoutRoom,
-            @Parameter(name="explanation") @RequestParam String explanation,
-            @Parameter(name="solved") @RequestParam boolean solved,
-            @Parameter(name="requestTime", description="in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601") @RequestParam("requestTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime requestTime)
+            @Parameter(name="requesterEmail",description="Email of help requester",example="cgaucho@ucsb.edu") @RequestParam String requesterEmail,
+            @Parameter(name="teamId",description="Team id",example="s22-5pm-3") @RequestParam String teamId,
+            @Parameter(name="tableOrBreakoutRoom",description="Table or breakout room number",example="7") @RequestParam String tableOrBreakoutRoom,
+            @Parameter(name="explanation",description="Description of help request",example="Need help with Swagger-ui") @RequestParam String explanation,
+            @Parameter(name="solved",description="If request has been solved",example="false") @RequestParam boolean solved,
+            @Parameter(name="requestTime", description="Time in iso format, e.g. YYYY-mm-ddTHH:MM:SS; see https://en.wikipedia.org/wiki/ISO_8601",example="2022-04-20T17:35") @RequestParam("requestTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime requestTime)
             throws JsonProcessingException {
 
         // For an explanation of @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
