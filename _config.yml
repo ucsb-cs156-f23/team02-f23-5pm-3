@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f23/team02-f23-5pm-3
 owner: ucsb-cs156-f23
 repo_name: team02-f23-5pm-3
-pull_requests: [{"author":{"id":"MDQ6VXNlcjI2Mjg4OTA4","is_bot":false,"login":"kellyyan","name":"Kelly Yan"},"headRefName":"Kelly-RecommendationRequest-create-db","number":49,"title":"ky - added recommendation request table interface and row entity","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/49"}]
+pull_requests: [{"author":{"id":"U_kgDOBX3Xdg","is_bot":false,"login":"kaitntom","name":""},"headRefName":"Kaitlyn-Organization","number":50,"title":"Kaitlyn- added entity and repository for org","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/50"},{"author":{"id":"MDQ6VXNlcjI2Mjg4OTA4","is_bot":false,"login":"kellyyan","name":"Kelly Yan"},"headRefName":"Kelly-RecommendationRequest-create-db","number":49,"title":"ky - added recommendation request table interface and row entity","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/49"}]
