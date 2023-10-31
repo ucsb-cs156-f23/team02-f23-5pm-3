@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f23/team02-f23-5pm-3
 owner: ucsb-cs156-f23
 repo_name: team02-f23-5pm-3
-pull_requests: [{"author":{"id":"U_kgDOBqGjHg","is_bot":false,"login":"madisonlong1","name":""},"headRefName":"Madison-MenuItemReview","number":47,"title":"ml- believe I have completed the database","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/47"}]
+pull_requests: [{"author":{"id":"U_kgDOBXgf8g","is_bot":false,"login":"wyatthspivak","name":""},"headRefName":"Wyatt-Articles-create-db","number":48,"title":"Implemented articles controller and tests with get and post","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/48"},{"author":{"id":"U_kgDOBqGjHg","is_bot":false,"login":"madisonlong1","name":""},"headRefName":"Madison-MenuItemReview","number":47,"title":"ml- believe I have completed the database","url":"https://github.com/ucsb-cs156-f23/team02-f23-5pm-3/pull/47"}]
