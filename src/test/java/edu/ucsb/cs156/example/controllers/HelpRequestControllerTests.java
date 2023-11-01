@@ -128,14 +128,14 @@ public class HelpRequestControllerTests extends ControllerTestCase {
                         .tableOrBreakoutRoom("13")
                         .requestTime(rqt3)
                         .explanation("Merge conflict")
-                        .solved(false)
+                        .solved(true)
                         .build();
 
             when(helpRequestRepository.save(eq(helpRequest3))).thenReturn(helpRequest3);
 
             // act
             MvcResult response = mockMvc.perform(
-                            post("/api/helprequests/post?requesterEmail=pdg@ucsb.edu&teamId=s22-5pm-4&tableOrBreakoutRoom=13&requestTime=2022-04-21T14:15&explanation=Merge conflict&solved=false")
+                            post("/api/helprequests/post?requesterEmail=pdg@ucsb.edu&teamId=s22-5pm-4&tableOrBreakoutRoom=13&requestTime=2022-04-21T14:15&explanation=Merge conflict&solved=true")
                                             .with(csrf()))
                             .andExpect(status().isOk()).andReturn();
 

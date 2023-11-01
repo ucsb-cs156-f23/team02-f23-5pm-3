@@ -64,7 +64,6 @@ public class HelpRequestController extends ApiController{
         helpRequest.setRequestTime(requestTime);
 
         HelpRequest savedHelpRequest = helpRequestRepository.save(helpRequest);
-
         return savedHelpRequest;
     }
 }
