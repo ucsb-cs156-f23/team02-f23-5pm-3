@@ -53,13 +53,24 @@ public class UCSBDiningCommonsMenuItemController extends ApiController{
             @Parameter(name="name") @RequestParam String name,
             @Parameter(name="station") @RequestParam String station)
             throws JsonProcessingException {
-                UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = new UCSBDiningCommonsMenuItem();
-                ucsbDiningCommonsMenuItem.setDiningCommonsCode(diningCommonsCode);
-                ucsbDiningCommonsMenuItem.setName(name);
-                ucsbDiningCommonsMenuItem.setStation(station);
+        UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = new UCSBDiningCommonsMenuItem();
+        ucsbDiningCommonsMenuItem.setDiningCommonsCode(diningCommonsCode);
+        ucsbDiningCommonsMenuItem.setName(name);
+        ucsbDiningCommonsMenuItem.setStation(station);
 
-                UCSBDiningCommonsMenuItem savedUcsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.save(ucsbDiningCommonsMenuItem);
+        UCSBDiningCommonsMenuItem savedUcsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.save(ucsbDiningCommonsMenuItem);
 
-                return savedUcsbDiningCommonsMenuItem;
-            }
+        return savedUcsbDiningCommonsMenuItem;
+    }
+
+    @Operation(summary= "Get a single ucsb dining menu item")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @GetMapping("")
+    public UCSBDiningCommonsMenuItem getById(
+            @Parameter(name="id") @RequestParam Long id) {
+        UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(UCSBDiningCommonsMenuItem.class, id));
+
+        return ucsbDiningCommonsMenuItem;
+    }
 }
