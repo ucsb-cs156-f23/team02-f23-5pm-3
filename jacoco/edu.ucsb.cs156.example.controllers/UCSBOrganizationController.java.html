@@ -61,6 +61,16 @@ import javax.validation.Valid;
 <span class="fc" id="L61">        return savedCommons;</span>
     }
 
-    
+    @Operation(summary= &quot;Get a single organization&quot;)
+    @PreAuthorize(&quot;hasRole('ROLE_USER')&quot;)
+    @GetMapping(&quot;&quot;)
+    public UCSBOrganization getById(
+            @Parameter(name=&quot;orgcode&quot;) @RequestParam String orgcode) {
+<span class="fc" id="L69">        UCSBOrganization commons = ucsbOrganizationRepository.findById(orgcode)</span>
+<span class="fc" id="L70">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBOrganization.class, orgcode));</span>
+
+<span class="fc" id="L72">        return commons;</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
