@@ -53,14 +53,25 @@ import java.time.LocalDateTime;
             @Parameter(name=&quot;name&quot;) @RequestParam String name,
             @Parameter(name=&quot;station&quot;) @RequestParam String station)
             throws JsonProcessingException {
-<span class="fc" id="L56">                UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = new UCSBDiningCommonsMenuItem();</span>
-<span class="fc" id="L57">                ucsbDiningCommonsMenuItem.setDiningCommonsCode(diningCommonsCode);</span>
-<span class="fc" id="L58">                ucsbDiningCommonsMenuItem.setName(name);</span>
-<span class="fc" id="L59">                ucsbDiningCommonsMenuItem.setStation(station);</span>
+<span class="fc" id="L56">        UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = new UCSBDiningCommonsMenuItem();</span>
+<span class="fc" id="L57">        ucsbDiningCommonsMenuItem.setDiningCommonsCode(diningCommonsCode);</span>
+<span class="fc" id="L58">        ucsbDiningCommonsMenuItem.setName(name);</span>
+<span class="fc" id="L59">        ucsbDiningCommonsMenuItem.setStation(station);</span>
 
-<span class="fc" id="L61">                UCSBDiningCommonsMenuItem savedUcsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.save(ucsbDiningCommonsMenuItem);</span>
+<span class="fc" id="L61">        UCSBDiningCommonsMenuItem savedUcsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.save(ucsbDiningCommonsMenuItem);</span>
 
-<span class="fc" id="L63">                return savedUcsbDiningCommonsMenuItem;</span>
-            }
+<span class="fc" id="L63">        return savedUcsbDiningCommonsMenuItem;</span>
+    }
+
+    @Operation(summary= &quot;Get a single ucsb dining menu item&quot;)
+    @PreAuthorize(&quot;hasRole('ROLE_USER')&quot;)
+    @GetMapping(&quot;&quot;)
+    public UCSBDiningCommonsMenuItem getById(
+            @Parameter(name=&quot;id&quot;) @RequestParam Long id) {
+<span class="fc" id="L71">        UCSBDiningCommonsMenuItem ucsbDiningCommonsMenuItem = ucsbDiningCommonsMenuItemRepository.findById(id)</span>
+<span class="fc" id="L72">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBDiningCommonsMenuItem.class, id));</span>
+
+<span class="fc" id="L74">        return ucsbDiningCommonsMenuItem;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
