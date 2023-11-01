@@ -84,24 +84,23 @@ public class UCSBOrganizationController extends ApiController {
         return genericMessage("UCSBOrganization with id %s deleted".formatted(orgcode));
     }
 
-    // @Operation(summary= "Update a single organization")
-    // @PreAuthorize("hasRole('ROLE_ADMIN')")
-    // @PutMapping("")
-    // public UCSBOrganization updateCommons(
-    //         @Parameter(name="orgcode") @RequestParam String orgcode,
-    //         @RequestBody @Valid UCSBOrganization incoming) {
+    @Operation(summary= "Update a single organization")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PutMapping("")
+    public UCSBOrganization updateCommons(
+            @Parameter(name="orgcode") @RequestParam String orgcode,
+            @RequestBody @Valid UCSBOrganization incoming) {
 
-    //     UCSBOrganization commons = ucsbOrganizationRepository.findById(orgcode)
-    //             .orElseThrow(() -> new EntityNotFoundException(UCSBOrganization.class, orgcode));
+        UCSBOrganization commons = ucsbOrganizationRepository.findById(orgcode)
+                .orElseThrow(() -> new EntityNotFoundException(UCSBOrganization.class, orgcode));
 
 
-    //     commons.setOrgcode(incoming.getOrgcode());
-    //     commons.setOrgTranslationShort(incoming.getOrgTranslationShort());
-    //     commons.setOrgTranslation(incoming.getOrgTranslation());
-    //     commons.setInactive(incoming.getInactive());
+        commons.setOrgTranslationShort(incoming.getOrgTranslationShort());
+        commons.setOrgTranslation(incoming.getOrgTranslation());
+        commons.setInactive(incoming.getInactive());
 
-    //     ucsbOrganizationRepository.save(commons);
+        ucsbOrganizationRepository.save(commons);
 
-    //     return commons;
-    // }
+        return commons;
+    }
 }
