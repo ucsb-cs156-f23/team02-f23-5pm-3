@@ -84,25 +84,24 @@ import javax.validation.Valid;
 <span class="fc" id="L84">        return genericMessage(&quot;UCSBOrganization with id %s deleted&quot;.formatted(orgcode));</span>
     }
 
-    // @Operation(summary= &quot;Update a single organization&quot;)
-    // @PreAuthorize(&quot;hasRole('ROLE_ADMIN')&quot;)
-    // @PutMapping(&quot;&quot;)
-    // public UCSBOrganization updateCommons(
-    //         @Parameter(name=&quot;orgcode&quot;) @RequestParam String orgcode,
-    //         @RequestBody @Valid UCSBOrganization incoming) {
+    @Operation(summary= &quot;Update a single organization&quot;)
+    @PreAuthorize(&quot;hasRole('ROLE_ADMIN')&quot;)
+    @PutMapping(&quot;&quot;)
+    public UCSBOrganization updateCommons(
+            @Parameter(name=&quot;orgcode&quot;) @RequestParam String orgcode,
+            @RequestBody @Valid UCSBOrganization incoming) {
 
-    //     UCSBOrganization commons = ucsbOrganizationRepository.findById(orgcode)
-    //             .orElseThrow(() -&gt; new EntityNotFoundException(UCSBOrganization.class, orgcode));
+<span class="fc" id="L94">        UCSBOrganization commons = ucsbOrganizationRepository.findById(orgcode)</span>
+<span class="fc" id="L95">                .orElseThrow(() -&gt; new EntityNotFoundException(UCSBOrganization.class, orgcode));</span>
 
 
-    //     commons.setOrgcode(incoming.getOrgcode());
-    //     commons.setOrgTranslationShort(incoming.getOrgTranslationShort());
-    //     commons.setOrgTranslation(incoming.getOrgTranslation());
-    //     commons.setInactive(incoming.getInactive());
+<span class="fc" id="L98">        commons.setOrgTranslationShort(incoming.getOrgTranslationShort());</span>
+<span class="fc" id="L99">        commons.setOrgTranslation(incoming.getOrgTranslation());</span>
+<span class="fc" id="L100">        commons.setInactive(incoming.getInactive());</span>
 
-    //     ucsbOrganizationRepository.save(commons);
+<span class="fc" id="L102">        ucsbOrganizationRepository.save(commons);</span>
 
-    //     return commons;
-    // }
+<span class="fc" id="L104">        return commons;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
