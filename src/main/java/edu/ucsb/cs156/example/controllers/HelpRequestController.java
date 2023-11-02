@@ -1,6 +1,7 @@
 package edu.ucsb.cs156.example.controllers;
 
 import edu.ucsb.cs156.example.entities.HelpRequest;
+import edu.ucsb.cs156.example.entities.UCSBDate;
 import edu.ucsb.cs156.example.errors.EntityNotFoundException;
 import edu.ucsb.cs156.example.repositories.HelpRequestRepository;
 
@@ -16,11 +17,15 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+
+import javax.validation.Valid;
 
 @Tag(name = "HelpRequests")
 @RequestMapping("/api/helprequests")
@@ -64,7 +69,28 @@ public class HelpRequestController extends ApiController{
         helpRequest.setRequestTime(requestTime);
 
         HelpRequest savedHelpRequest = helpRequestRepository.save(helpRequest);
-
         return savedHelpRequest;
+    }
+    
+    @Operation(summary= "Update a single help request")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PutMapping("")
+    public HelpRequest updateHelpRequest(
+        @Parameter(name="id") @RequestParam Long id,
+        @RequestBody @Valid HelpRequest incoming) {
+
+        HelpRequest helpRequest = helpRequestRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(HelpRequest.class, id));
+
+        helpRequest.setRequesterEmail(incoming.getRequesterEmail());
+        helpRequest.setTeamId(incoming.getTeamId());
+        helpRequest.setTableOrBreakoutRoom(incoming.getTableOrBreakoutRoom());
+        helpRequest.setRequestTime(incoming.getRequestTime());
+        helpRequest.setExplanation(incoming.getExplanation());
+        helpRequest.setSolved(incoming.getSolved());
+
+        helpRequestRepository.save(helpRequest);
+
+        return helpRequest;
     }
 }
