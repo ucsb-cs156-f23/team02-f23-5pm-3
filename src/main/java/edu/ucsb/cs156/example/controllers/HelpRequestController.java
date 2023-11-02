@@ -69,7 +69,19 @@ public class HelpRequestController extends ApiController{
         helpRequest.setRequestTime(requestTime);
 
         HelpRequest savedHelpRequest = helpRequestRepository.save(helpRequest);
+
         return savedHelpRequest;
+    }
+
+    @Operation(summary= "Get a single help request")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @GetMapping("")
+    public HelpRequest getById(
+            @Parameter(name="id") @RequestParam Long id) {
+        HelpRequest helpRequest = helpRequestRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(HelpRequest.class, id));
+
+        return helpRequest;
     }
     
     @Operation(summary= "Update a single help request")
